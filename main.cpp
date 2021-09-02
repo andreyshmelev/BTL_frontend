@@ -52,7 +52,7 @@ public:
             }
             emit angleChanged(m_nAngle);
         });
-        m_RotationTimer.start(nRotationSpeed);
+//        m_RotationTimer.start(nRotationSpeed);
     }
 
 private:

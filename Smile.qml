@@ -35,17 +35,17 @@ Item {
         radius: width / 2
 
         Shape {
-           width: 300
-           height: 300
+           width: 100
+           height: 100
 
            ShapePath {
-              strokeWidth: 8
+              strokeWidth: 2
               strokeColor: 'red'
               startX: 0; startY: 100
               PathArc {
-                 x: 0; y: 0
-                 radiusX: 100; radiusY: 100
-                 direction: PathArc.Clockwise
+                 x: -parent.width / 5; y: -parent.height / 5
+                 radiusX: width / 4; radiusY: width/2
+                 direction: PathArc.Counterclockwise
               }
            }
         }
