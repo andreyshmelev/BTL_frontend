@@ -18,7 +18,7 @@
   \brief
 */
 
-import QtQuick 2.0
+import QtQuick 2.14
 import QtQuick.Shapes 1.12
 
 
@@ -35,21 +35,53 @@ Item {
         radius: width / 2
 
         Shape {
-           width: 100
-           height: 100
+           width: width
+           height: height
+
+           anchors.centerIn: parent
+
+//           anchors.verticalCenter: parent.verticalCenter
+//           anchors.verticalCenterOffset: -parent.height / 5
+//           anchors.horizontalCenter: parent.horizontalCenter
+//           anchors.horizontalCenterOffset: -parent.width / 5
 
            ShapePath {
               strokeWidth: 2
               strokeColor: 'red'
               fillColor: "transparent"
-              startX: 0; startY: 100
-              PathArc {
-                 x: -parent.width / 5;
-                 y: -parent.height / 5
-                 radiusX: width / 4; radiusY: width/2
-                 direction: PathArc.Counterclockwise
-              }
+              startX: -width / 5
+              startY: 10
+              PathAngleArc {
+                       centerX: 30
+                       centerY: 30
+                       radiusX: 50
+                       radiusY: 100
+                   }
            }
+        }
+
+        Shape {
+            width: parent.width
+            height: parent.height
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+
+            ShapePath {
+                strokeColor: 'red'
+                fillColor: "transparent"
+
+                strokeWidth: 2
+                capStyle: ShapePath.FlatCap
+
+                PathAngleArc {
+                    centerX: width/2
+                    centerY: height/2
+                    radiusX: 60
+                    radiusY: 30
+                    startAngle: -180
+                    sweepAngle: 180
+                }
+            }
         }
 
         Rectangle {
