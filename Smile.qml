@@ -21,12 +21,12 @@
 import QtQuick 2.0
 import QtQuick.Shapes 1.12
 
-
 Item {
     id: root
 
     property alias angle: smile.rotation
     property alias color: smile.color
+    property alias happy: mouth.direction
 
     Rectangle {
         id: smile
@@ -47,11 +47,12 @@ Item {
                 startY: width/5
 
                 PathArc {
+
+                    id: mouth
                     relativeX: width/2;
                     relativeY: 0
                     radiusX: width / 5
                     radiusY: width / 10
-                    direction :  PathArc.Counterclockwise
                 }
             }
         }
@@ -78,7 +79,5 @@ Item {
             radius: width / 2
             color: "white"
         }
-
-
     }
 }
