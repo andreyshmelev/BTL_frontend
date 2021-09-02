@@ -18,7 +18,7 @@
   \brief
 */
 
-import QtQuick 2.14
+import QtQuick 2.0
 import QtQuick.Shapes 1.12
 
 
@@ -35,51 +35,23 @@ Item {
         radius: width / 2
 
         Shape {
-           width: width
-           height: height
-
-           anchors.centerIn: parent
-
-//           anchors.verticalCenter: parent.verticalCenter
-//           anchors.verticalCenterOffset: -parent.height / 5
-//           anchors.horizontalCenter: parent.horizontalCenter
-//           anchors.horizontalCenterOffset: -parent.width / 5
-
-           ShapePath {
-              strokeWidth: 2
-              strokeColor: 'red'
-              fillColor: "transparent"
-              startX: -width / 5
-              startY: 10
-              PathAngleArc {
-                       centerX: 30
-                       centerY: 30
-                       radiusX: 50
-                       radiusY: 100
-                   }
-           }
-        }
-
-        Shape {
-            width: parent.width
-            height: parent.height
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
+            width: width
+            height: height
+             anchors.centerIn: parent
 
             ShapePath {
+                strokeWidth: 2
                 strokeColor: 'red'
                 fillColor: "transparent"
+                startX:  - width/4
+                startY: width/5
 
-                strokeWidth: 2
-                capStyle: ShapePath.FlatCap
-
-                PathAngleArc {
-                    centerX: width/2
-                    centerY: height/2
-                    radiusX: 60
-                    radiusY: 30
-                    startAngle: -180
-                    sweepAngle: 180
+                PathArc {
+                    relativeX: width/2;
+                    relativeY: 0
+                    radiusX: width / 5
+                    radiusY: width / 10
+                    direction :  PathArc.Counterclockwise
                 }
             }
         }
@@ -106,5 +78,7 @@ Item {
             radius: width / 2
             color: "white"
         }
+
+
     }
 }
