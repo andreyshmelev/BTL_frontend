@@ -37,7 +37,7 @@ Item {
         Shape {
             width: width
             height: height
-             anchors.centerIn: parent
+            anchors.centerIn: parent
 
             ShapePath {
                 strokeWidth: 2
@@ -56,6 +56,15 @@ Item {
                 }
             }
         }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                parent.color = "black"
+            }
+        }
+
+
 
         Rectangle {
             anchors.verticalCenter: parent.verticalCenter
