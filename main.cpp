@@ -54,8 +54,7 @@ public:
             }
             emit angleChanged(m_nAngle);
         });
-//        m_RotationTimer.start(nRotationSpeed);
-        qDebug() << bHappySmile;
+        m_RotationTimer.start(nRotationSpeed);
     }
 
 private:

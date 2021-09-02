@@ -64,8 +64,6 @@ Item {
             }
         }
 
-
-
         Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: -parent.height / 5
@@ -84,7 +82,6 @@ Item {
             anchors.horizontalCenterOffset: parent.width / 5
             width: parent.width * 0.2
             height: width
-
             radius: width / 2
             color: "white"
         }
