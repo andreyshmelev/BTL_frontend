@@ -48,7 +48,7 @@ Window {
 
             angle: model.angle
             color: model.color
-            happy: PathArc.Clockwise
+            happy: model.happy ? PathArc.Clockwise : PathArc.Counterclockwise
         }
     }
 }
