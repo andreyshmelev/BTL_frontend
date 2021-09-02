@@ -41,9 +41,11 @@ Item {
            ShapePath {
               strokeWidth: 2
               strokeColor: 'red'
+              fillColor: "transparent"
               startX: 0; startY: 100
               PathArc {
-                 x: -parent.width / 5; y: -parent.height / 5
+                 x: -parent.width / 5;
+                 y: -parent.height / 5
                  radiusX: width / 4; radiusY: width/2
                  direction: PathArc.Counterclockwise
               }
