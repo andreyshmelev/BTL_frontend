@@ -20,6 +20,8 @@
 
 import QtQuick 2.9
 import QtQuick.Window 2.2
+import QtQuick.Layouts 1.14
+import QtQuick.Controls 2.14
 
 Window {
     id: root
@@ -49,6 +51,25 @@ Window {
             angle: model.angle
             color: model.color
             happy: model.happy ? PathArc.Clockwise : PathArc.Counterclockwise
+        }
+
+        RowLayout {
+            anchors.fill: parent
+            spacing: 6
+            id: buttons
+
+            Button {
+                text: "Increase speed"
+                onClicked: console.log("Increase speed")
+
+
+
+
+            }
+            Button {
+                text: "Decrease speed"
+                onClicked: console.log("Decrease speed")
+            }
         }
     }
 }
