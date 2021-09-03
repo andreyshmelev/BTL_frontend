@@ -55,11 +55,12 @@ Window {
         }
     }
 
-
     RowLayout {
         anchors.right: grid.right;
         anchors.bottom: grid.bottom;
-        anchors.topMargin: grid.anchors
+        anchors.rightMargin: 5
+        anchors.bottomMargin: 5
+
         id: buttons
 
         Button {
