@@ -94,23 +94,23 @@ int main(int nArgc, char *p_arrArgv[])
     };
 
 
-    auto GetHappySmile = []() {
+    auto GetRandomSmile = []() {
         return (qrand() % 2) ? true : false;
     };
 
     QList<QObject*> arrSmiles;
-    arrSmiles.append(new Smile("#6b8e23", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#ffa500", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#ff4500", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#da70d6", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#eee8aa", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#98fb98", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#afeeee", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#db7093", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#ffefd5", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#ffdab9", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#cd853f", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
-    arrSmiles.append(new Smile("#ffc0cb", GetRandomSpeed(), GetRandomDirection(), GetHappySmile()));
+    arrSmiles.append(new Smile("#6b8e23", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#ffa500", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#ff4500", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#da70d6", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#eee8aa", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#98fb98", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#afeeee", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#db7093", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#ffefd5", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#ffdab9", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#cd853f", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
+    arrSmiles.append(new Smile("#ffc0cb", GetRandomSpeed(), GetRandomDirection(), GetRandomSmile()));
 
     QQmlApplicationEngine Engine;
     QQmlContext *pContext = Engine.rootContext();

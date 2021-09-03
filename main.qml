@@ -57,12 +57,13 @@ Window {
 
 
     RowLayout {
-        anchors.fill: parent
-        spacing: 6
+        anchors.right: grid.right;
+        anchors.bottom: grid.bottom;
+        anchors.topMargin: grid.anchors
         id: buttons
 
         Button {
-            text: "Increase speed"
+            text: "Increase rotation speed\nof all Smiles"
             onClicked:
             {
                 for (var i = 0; i < grid.count; ++i)
@@ -72,8 +73,9 @@ Window {
                 }
             }
         }
+
         Button {
-            text: "Decrease speed"
+            text: "Decrease rotation speed\nof all Smiles"
             onClicked:
             {
                 for (var i = 0; i < grid.count; ++i)
