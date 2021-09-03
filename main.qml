@@ -51,25 +51,27 @@ Window {
             angle: model.angle
             color: model.color
             happy: model.happy ? PathArc.Clockwise : PathArc.Counterclockwise
+
+            RowLayout {
+                anchors.fill: parent
+                spacing: 6
+                id: buttons
+
+                Button {
+                    text: "Increase speed"
+                    onClicked:
+                    {
+                        increaseSpeed()
+                        console.log("Increase speed")
+                    }
+                }
+                Button {
+                    text: "Decrease speed"
+                    onClicked: console.log("Decrease speed")
+                }
+            }
         }
 
-        RowLayout {
-            anchors.fill: parent
-            spacing: 6
-            id: buttons
 
-            Button {
-                text: "Increase speed"
-                onClicked: console.log("Increase speed")
-
-
-
-
-            }
-            Button {
-                text: "Decrease speed"
-                onClicked: console.log("Decrease speed")
-            }
-        }
     }
 }

@@ -38,9 +38,10 @@ class Smile : public QObject
     Q_PROPERTY(qint32 angle MEMBER m_nAngle NOTIFY angleChanged)
     Q_PROPERTY(QString color MEMBER m_strColor NOTIFY colorChanged)
     Q_PROPERTY(bool happy MEMBER m_bhappySmile NOTIFY happyChanged)
+    Q_PROPERTY(qint32 speed MEMBER m_nRotationSpeed NOTIFY speedChanged)
 
 public:
-    Smile(QString strColor, qint32 nRotationSpeed, bool bRotationDirection, bool bHappySmile) : QObject(), m_strColor(strColor), m_bhappySmile(bHappySmile)
+    Smile(QString strColor, qint32 nRotationSpeed, bool bRotationDirection, bool bHappySmile) : QObject(), m_strColor(strColor), m_nRotationSpeed(nRotationSpeed), m_bhappySmile(bHappySmile)
     {
         connect(&m_RotationTimer, &QTimer::timeout, [this, bRotationDirection]() {
             m_nAngle += bRotationDirection ? 2 : -2;
@@ -57,17 +58,22 @@ public:
         m_RotationTimer.start(nRotationSpeed);
     }
 
+    Q_INVOKABLE void increaseSpeed(){
+        m_RotationTimer.setInterval(--m_nRotationSpeed);
+    }
+
 private:
     qint32 m_nAngle = 0;
     QString m_strColor;
     bool m_bhappySmile = false;
-
+    qint32 m_nRotationSpeed;
     QTimer m_RotationTimer;
 
 signals:
     void angleChanged(qint32 angle);
     void colorChanged(QString color);
     void happyChanged(bool happy);
+    void speedChanged(qint32 speed);
 };
 
 int main(int nArgc, char *p_arrArgv[])
