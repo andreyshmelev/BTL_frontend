@@ -86,4 +86,13 @@ Item {
             color: "white"
         }
     }
+
+
+    function increaseRotationSpeed() {
+        increaseSpeed()
+    }
+
+    function decreaseRotationSpeed() {
+        decreaseSpeed()
+    }
 }

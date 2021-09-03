@@ -59,7 +59,13 @@ public:
     }
 
     Q_INVOKABLE void increaseSpeed(){
+        if(m_nRotationSpeed > 0)
         m_RotationTimer.setInterval(--m_nRotationSpeed);
+    }
+
+
+    Q_INVOKABLE void decreaseSpeed(){
+        m_RotationTimer.setInterval(m_nRotationSpeed+=3);
     }
 
 private:
