@@ -53,39 +53,41 @@ Window {
             color: model.color
             happy: model.happy ? PathArc.Clockwise : PathArc.Counterclockwise
 
-        }
+            function inc() {
+                increaseSpeed()
+                console.log("inc inc inc")
+            }
 
+            RowLayout {
+                anchors.fill: parent
+                spacing: 6
+                id: buttons
 
-        RowLayout {
-            anchors.fill: parent
-            spacing: 6
-            id: buttons
+                Button {
+                    text: "Increase speed"
+                    onClicked:
+                    {
+                        for (var i = 0; i < grid.count; ++i)
+                        {
+                            console.log(grid.count)
+                            var itemSmile = grid.itemAtIndex(i)
+                            console.log(itemSmile )
+                            itemSmile.inc()
+                        }
 
-            Button {
-                text: "Increase speed"
-                onClicked:
-                {
-                    for (var i = 0; i < grid.count; ++i)
-                                {
-                        console.log(grid.count)
-                        var itemSmile = grid.itemAtIndex(i)
-                        console.log(itemSmile )
-                        itemSmile.increaseSpeed()
-                                }
+                        //                    for(var child in grid.contentItem.children) {
+                        //                        console.log(grid.contentItem.children[child].objectName)
+                        //                    grid.contentItem.children[child]
+                        //                    }
+                        ////
 
-//                    for(var child in grid.contentItem.children) {
-//                        console.log(grid.contentItem.children[child].objectName)
-//                    grid.contentItem.children[child]
-//                    }
-////
-
+                    }
+                }
+                Button {
+                    text: "Decrease speed"
+                    onClicked: console.log("Decrease speed")
                 }
             }
-            Button {
-                text: "Decrease speed"
-                onClicked: console.log("Decrease speed")
-            }
         }
-
     }
 }
