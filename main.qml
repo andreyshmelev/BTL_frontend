@@ -18,7 +18,7 @@
   \brief
 */
 
-import QtQuick 2.9
+import QtQuick 2.14
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.14
 import QtQuick.Controls 2.14
@@ -36,6 +36,7 @@ Window {
     property int smileSize: Math.min(width / smilesCount, height / smilesCount)
 
     GridView {
+        id: grid
         anchors.fill: parent
         anchors.leftMargin: root.smileSize * 0.05
         anchors.topMargin: anchors.leftMargin
@@ -52,26 +53,39 @@ Window {
             color: model.color
             happy: model.happy ? PathArc.Clockwise : PathArc.Counterclockwise
 
-            RowLayout {
-                anchors.fill: parent
-                spacing: 6
-                id: buttons
-
-                Button {
-                    text: "Increase speed"
-                    onClicked:
-                    {
-                        increaseSpeed()
-                        console.log("Increase speed")
-                    }
-                }
-                Button {
-                    text: "Decrease speed"
-                    onClicked: console.log("Decrease speed")
-                }
-            }
         }
 
+
+        RowLayout {
+            anchors.fill: parent
+            spacing: 6
+            id: buttons
+
+            Button {
+                text: "Increase speed"
+                onClicked:
+                {
+                    for (var i = 0; i < grid.count; ++i)
+                                {
+                        console.log(grid.count)
+                        var itemSmile = grid.itemAtIndex(i)
+                        console.log(itemSmile )
+                        itemSmile.increaseSpeed()
+                                }
+
+//                    for(var child in grid.contentItem.children) {
+//                        console.log(grid.contentItem.children[child].objectName)
+//                    grid.contentItem.children[child]
+//                    }
+////
+
+                }
+            }
+            Button {
+                text: "Decrease speed"
+                onClicked: console.log("Decrease speed")
+            }
+        }
 
     }
 }
